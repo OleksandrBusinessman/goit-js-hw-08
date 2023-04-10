@@ -5,7 +5,7 @@ const VPL_CURRENT_TIME = 'videoplayer-current-time';
 
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
-const currentTime = JSON.parse(localStorage.getItem(VPL_CURRENT_TIME));
+const currentTime = localStorage.getItem(VPL_CURRENT_TIME);
 
 if (currentTime !== null) {
   player.setCurrentTime(currentTime);
