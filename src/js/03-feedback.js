@@ -29,7 +29,11 @@ function fillInputs() {
 
 function onFormSubmit(e) {
   e.preventDefault();
+  if (input.value === '' || textarea.value === '') {
+    return;
+  }
   e.currentTarget.reset();
-  userData = {};
   localStorage.removeItem(FEEDBACK_FS);
+  console.log(userData);
+  userData = {};
 }
