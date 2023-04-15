@@ -13,16 +13,17 @@ feedbackForm.addEventListener('submit', onFormSubmit);
 
 fillInputs();
 
-function onFormInput(e) {
-  userData[e.target.name] = e.target.value;
+function onFormInput() {
+  userData.email = input.value;
+  userData.message = textarea.value;
   localStorage.setItem(FEEDBACK_FS, JSON.stringify(userData));
 }
 
 function fillInputs() {
   const savedData = JSON.parse(localStorage.getItem(FEEDBACK_FS));
   if (savedData) {
-    input.value = savedData.email || '';
-    textarea.value = savedData.message || '';
+    input.value = savedData.email;
+    textarea.value = savedData.message;
     userData = savedData;
   }
 }
@@ -32,8 +33,7 @@ function onFormSubmit(e) {
   if (input.value === '' || textarea.value === '') {
     return;
   }
+  console.log(userData);
   e.currentTarget.reset();
   localStorage.removeItem(FEEDBACK_FS);
-  console.log(userData);
-  userData = {};
 }
