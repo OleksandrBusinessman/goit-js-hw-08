@@ -5,8 +5,8 @@ const FEEDBACK_FS = 'feedback-form-state';
 let userData = {};
 
 const feedbackForm = document.querySelector('.feedback-form');
-const input = document.querySelector('input');
-const textarea = document.querySelector('textarea');
+const input = document.querySelector('[name="email"]');
+const textarea = document.querySelector('[name="message"]');
 
 feedbackForm.addEventListener('input', throttle(onFormInput, 500));
 feedbackForm.addEventListener('submit', onFormSubmit);
