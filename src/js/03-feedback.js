@@ -30,7 +30,7 @@ function fillInputs() {
 
 function onFormSubmit(e) {
   e.preventDefault();
-  if (input.value === '' || textarea.value === '') {
+  if (!input.value || !textarea.value) {
     return;
   }
   console.log(userData);
